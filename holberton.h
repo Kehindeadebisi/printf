@@ -20,7 +20,7 @@ typedef struct identifierStruct
 {
 char *indentifier;
 int (*printer)(va_list);
-} identifier;
+} identifierStruct;
 
 
 #endif
