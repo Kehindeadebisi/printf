@@ -41,9 +41,10 @@ return (0);
 
 int _printf(const char *format, ...)
 {
-va_list arg;
+
 unsigned int i;
 int numberofcharPrinted = 0, identifierPrinted = 0;
+va_list arg;
 va_start(arg, format);
 
 if (format == NULL)
