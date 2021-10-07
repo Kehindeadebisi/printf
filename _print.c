@@ -25,6 +25,7 @@ for (index = 0; functs[index].indentifier != NULL; index++)
 {
 if (functs[index].indentifier[0] == next)
 return (functs[index].printer(arg));
+
 }
 return (0);
 }
