@@ -4,7 +4,7 @@
 
 /**
  * specifierIdentifiers - function to print the specifiers characters
- * @next: character after the % character
+ * @next: character after the % specifierer
  * @arg: argument for the indentifier
  * Return: the number of character printed excluding null bytes
  */

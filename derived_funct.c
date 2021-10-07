@@ -16,7 +16,6 @@ int i, j, remainder, nbrCharacters = 0;
 char *numhex;
 
 for (num2 = num; num2 != 0; nbrCharacters++, num2 /= 16)
-;
 
 numhex = malloc(nbrCharacters);
 for (i = 0; num != 0; i++)

@@ -13,7 +13,7 @@ int print_unsignedIntToHex(unsigned int num, char _case);
 int print_percent(va_list l, flags_t *f);
 
 /**
- * struct identifierStruct - structure definition of a printTypeStruct
+ * struct identifierStruct - structure definition of a print TypeStruct
  * @indentifier: type
  * @printer: function to print
  */
