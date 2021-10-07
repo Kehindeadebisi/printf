@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * printIdentifiers - function to print the specifiers characters
+ * specifierIdentifiers - function to print the specifiers characters
  * @next: character after the % character
  * @arg: argument for the indentifier
  * Return: the number of character printed excluding null bytes
@@ -67,7 +67,7 @@ continue;
 if (format[i + 1] == '\0')
 return (-1);
 
-identifierPrinted = printIdentifiers(format[i + 1], arg);
+identifierPrinted = specifierIdentifiers(format[i + 1], arg);
 if (identifierPrinted == -1 || identifierPrinted != 0)
 i++;
 
