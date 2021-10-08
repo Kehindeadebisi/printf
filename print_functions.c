@@ -1,50 +1,47 @@
 #include "holberton.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * print_char - writes the character c to stdout
- * @arg:argument
- *
- * Return: character on success
- * if error occur, -1 is returned.
- */
-
-int print_char(va_list args)
+  * _print_int_binary - Prints a int converted to binary
+  * @args: A list of variadic arguments
+  *
+  * Return: The number of printed digits
+  */
+int _print_int_binary(va_list args)
 {
+	unsigned int x = 0;
+	int b = 0, new = 0;
 
-	_putchar(va_arg(args, int));
-	return (1);
-}
-
-
-/**
- *print_str - prints string
- *@args: arguments
- *Return: string
- */
-
-int print_str(va_list args)
-{
-
-	int j;
-	char *str = va_arg(args, char *);
-
-	if (str == NULL)
-		str = "(null)";
-	for (j = 0; str[j]; j++)
+	new = va_arg(args, int);
+	x = new;
+	if (new < 0)
 	{
-		_putchar(str[j]);
+		_write('1');
+		new = new * -1;
+		x = new;
+		b += 1;
 	}
-	return (j);
+	while (x > 0)
+	{
+		x = x / 2;
+		b++;
+	}
+	_recursion_int_binary(new);
+	return (b);
 }
 
 /**
- *print_pct - prints character "%"
- *@args : arguments
- *
- *Return: character "%"
- */
-int print_pct(va_list args)
+  * _recursion_int_binary - Prints a binary
+  * @a: integer to print
+  *
+  */
+void _recursion_int_binary(int a)
 {
-	(void)args;
-	return (write(1, "%", 1));
+	unsigned int t;
+
+	t = a;
+	if (t / 2)
+		_recursion_int_binary(t / 2);
+	_write(t % 2 + '0');
 }
