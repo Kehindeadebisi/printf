@@ -8,31 +8,32 @@
  */
 int print_dec(va_list args)
 {
-int value;
-unsigned int abs, a, len;
-unsigned int count = 1;
+	int value;
+	unsigned int abs, a, len;
+	unsigned int countn = 1;
 
-len = 0;
-value = va_arg(args, int);
+	len = 0;
 
-if (value < 0)
-{
-len = len + _putchar('-');
-abs = value * -1;
-}
-else
-abs = value;
+	value = va_arg(args, int);
 
-a  = abs;
-while (a > 9)
-{
-a = a / 10;
-count = count * 10;
-}
-while (count >= 1)
-{
-len = len + _putchar(((abs / count) % 10) + '0');
-count = count / 10;
-}
-return (len);
+	if (value < 0)
+	{
+		len = len + _putchar('-');
+		abs = value * -1;
+	}
+	else
+		abs = value;
+
+	a = abs;
+	while (a > 9)
+	{
+		a = a / 10;
+		countn = countn * 10;
+	}
+	while (countn >= 1)
+	{
+		len = len + _putchar(((abs / countn) % 10) + '0');
+		countn = countn / 10;
+	}
+	return (len);
 }
