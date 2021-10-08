@@ -17,14 +17,13 @@ return (1);
 
 
 /**
- *print_str - prints string
- *@args: arguments
- *Return: string
+ * print_str - prints string
+ * @args: arguments
+ * Return: string
  */
 
 int print_str(va_list args)
 {
-
 int j;
 char *str = va_arg(args, char *);
 
@@ -38,10 +37,10 @@ return (j);
 }
 
 /**
- *print_pct - prints character "%"
- *@args : arguments
+ * print_pct - printf character "%"
+ * @args: arguments
  *
- *Return: character "%"
+ * Return: character "%"
  */
 int print_pct(va_list args)
 {
