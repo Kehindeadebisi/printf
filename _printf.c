@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "main.h"
+#include "holberton.h"
 
 /**
  * _printf - function that perform similar function to printf
