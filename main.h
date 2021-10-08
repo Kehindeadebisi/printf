@@ -1,5 +1,5 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdlib.h>
 #include <stdarg.h>
@@ -17,16 +17,16 @@
  */
 typedef struct func_type
 {
-char *t;
-int (*f)(va_list);
+	char *t;
+	int (*f)(va_list);
 } func_t;
 
-int _putchar(char c);
 int (*get_func(const char *format))(va_list);
+int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(va_list args);
-int print_dec(va_list args);
 int print_str(va_list args);
-int print_percent(va_list args);
+int print_char(va_list args);
+int print_pct(va_list args);
+int print_dec(va_list args);
 
 #endif
