@@ -2,7 +2,7 @@
 
 /**
  * print_char - writes the character c to stdout
- * @arg:argument
+ * @args:argument
  *
  * Return: character on success
  * if error occur, -1 is returned.
