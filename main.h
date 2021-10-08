@@ -11,7 +11,7 @@
 
 
 /**
- * struct funct_type - structure definition of a printTypeStruct
+ * struct func_type - structure definition of a printTypeStruct
  * @t: pointer to the argument
  * @f: function pointer linked with argument
  */
