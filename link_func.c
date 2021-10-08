@@ -1,8 +1,8 @@
 #include "main.h"
 /**
   * get_func - checker for valid specifier
-  * @args: A list of variadic arguments
   *
+  * @format: character pointer
   * Return: The length of the string
   */
 int (*get_func(const char *format))(va_list)
