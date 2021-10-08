@@ -1,48 +1,38 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 
 /**
- * print_unsignedIntToHex - prints unsigned int to hexadecimal
- * @num: number to print
- * @_case: letter 'a' on the case to print it (upper or lower)
- * Return: number or char printed
+ * print_dec - printsdecimal
+ *
+ * @args: the argument decimal
+ * Return: counter
  */
-
-int print_unsignedIntToHex(unsigned int num, char _case)
+int print_dec(va_list args)
 {
-unsigned int num2;
-int i, j, remainder, nbrCharacters = 0;
-char *numhex;
+int value;
+unsigned int abs, a, len;
+unsigned int count = 1;
 
-for (num2 = num; num2 != 0; nbrCharacters++, num2 /= 16)
-;
+len = 0;
+value = va_arg(args, int);
 
-numhex = malloc(nbrCharacters);
-for (i = 0; num != 0; i++)
+if (value < 0)
 {
-remainder = num % 16;
-if (remainder < 10)
-numhex[i] = remainder + '0';
+len = len + _putchar('-');
+abs = value * -1;
+}
 else
-numhex[i] = remainder - 10 + _case;
-num = num / 16;
-}
-for (j = i - 1; j >= 0; j--)
-_putchar(numhex[j]);
-free(numhex);
-return (nbrCharacters);
-}
+abs = value;
 
-/**
- * print_percent - prints a percent
- * @1: va_list arguments from _printf
- * @f: pointer to the struct flags
- * Return: number of char printed
- */
-int print_percent(va_list l, flags_t *f)
+a  = abs;
+while (a > 9)
 {
-(void)l;
-(void)f;
-return (_putchar('%'));
+a = a / 10;
+count = count * 10;
+}
+while (count >= 1)
+{
+len = len + _putchar(((abs / count) % 10) + '0');
+count = count / 10;
+}
+return (len);
 }
