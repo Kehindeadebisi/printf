@@ -10,39 +10,41 @@
 
 int print_char(va_list args)
 {
-_putchar(va_arg(args, int));
-return (1);
+
+	_putchar(va_arg(args, int));
+	return (1);
 }
 
 
 /**
- * print_str - prints a string with a 's' (lower case) specifier
- * @arg: argument
- * Return: number of character printed
+ *print_str - prints string
+ *@args: arguments
+ *Return: string
  */
-int print_str(va_list arg)
-{
-int i;
-char *str = va_arg(arg, char *);
 
-if (str == NULL)
-str = "(null)";
-
-for (i = 0; str[i]; i++)
+int print_str(va_list args)
 {
-_putchar(str[i]);
-}
-return (i);
+
+	int j;
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(null)";
+	for (j = 0; str[j]; j++)
+	{
+		_putchar(str[j]);
+	}
+	return (j);
 }
 
 /**
- * print_percent - prints character "%"
- * @args: arguments
+ *print_pct - prints character "%"
+ *@args : arguments
  *
- * Return: character "%"
+ *Return: character "%"
  */
-int print_percent(va_list args)
+int print_pct(va_list args)
 {
-(void)args;
-return (write(1, "%", 1));
+	(void)args;
+	return (write(1, "%", 1));
 }
